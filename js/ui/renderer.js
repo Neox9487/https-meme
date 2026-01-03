@@ -52,7 +52,7 @@ export function createStatusCard(status) {
             className: "card-body",
             innerHTML: `
                 <div class="card-code">${status.code}</div>
-                <div class="card-title">${status.title}</div>
+                <div class="card-title">${status.name}</div>
             `
         })
     );
@@ -104,7 +104,7 @@ export function renderDetail(status, prev, next) {
     const detailEl = document.querySelector("#view-detail");
     if (!detailEl) return;
 
-    const code = escapeHtml(status.code);
+    const code = escapeHtml(status.code) + " - " + escapeHtml(status.name);
     const title = escapeHtml(status.title);
     const cat = escapeHtml(status.category);
     const catText = escapeHtml(categoryLabel(status.category));
