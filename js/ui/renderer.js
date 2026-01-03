@@ -136,8 +136,8 @@ export function renderDetail(status, prev, next) {
                     <p class="hero-desc">${desc}</p>
 
                     <div class="hero-actions">
-                        <button class="btn" type="button" data-copy="${code}">Copy code</button>
-                        <button class="btn" type="button" data-copy-link>Copy link</button>
+                        <button class="btn sm" type="button" data-copy="${code}">Copy code</button>
+                        <button class="btn sm" type="button" data-copy-link>Copy link</button>
                     </div>
                 </div>
             </div>
