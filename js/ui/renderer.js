@@ -18,25 +18,44 @@ function categoryLabel(category) {
     }
 }
 
+function createMedia({ asset, code, title }) {
+    if (!asset) {
+        const div = document.createElement("div");
+        div.className = "media-placeholder";
+        div.textContent = code;
+        return div;
+    }
+
+    const img = document.createElement("img");
+    img.src = `/assets/images/${asset}.jpg`;
+    img.alt = `${code} ${title}`;
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.className = "media-image";
+
+    return img;
+}
+
+
 export function createStatusCard(status) {
     const a = document.createElement("a");
     a.className = "status-card";
     a.href = `#/${status.code}`;
-    a.dataset.code = String(status.code);
-    a.dataset.category = status.category;
 
-    const code = escapeHtml(status.code);
-    const title = escapeHtml(status.title);
+    const media = document.createElement("div");
+    media.className = "card-media";
+    media.appendChild(createMedia(status));
 
-    a.innerHTML = `
-        <div class="card-media" aria-hidden="true">
-            <div class="media-placeholder">${code}</div>
-        </div>
-        <div class="card-body">
-            <div class="card-code">${code}</div>
-            <div class="card-title">${title}</div>
-        </div>
-    `.trim();
+    a.append(
+        media,
+        Object.assign(document.createElement("div"), {
+            className: "card-body",
+            innerHTML: `
+                <div class="card-code">${status.code}</div>
+                <div class="card-title">${status.title}</div>
+            `
+        })
+    );
 
     return a;
 }
@@ -124,6 +143,12 @@ export function renderDetail(status, prev, next) {
             </div>
         </div>
     `.trim();
+
+    const mediaEl = document.createElement("div");
+    mediaEl.className = "hero-media";
+    mediaEl.appendChild(createMedia(status));
+    
+    detailEl.querySelector(".hero-media")?.replaceWith(mediaEl);
 
     detailEl.querySelectorAll("[data-copy]").forEach(btn => {
         btn.addEventListener("click", async () => {
