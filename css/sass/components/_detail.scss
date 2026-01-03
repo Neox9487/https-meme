@@ -38,7 +38,7 @@
 .hero-media {
     min-height: 360px;
     border-radius: $radius-xl;
-    border: 1px dashed rgba(#fff, 0.18);
+    border: 4px solid rgba(#fff, 0.18);
     background: rgba(#000, 0.2);
 
     overflow: hidden;
@@ -72,6 +72,7 @@
     margin-top: 6px;
     color: $text-dim;
     font-size: 18px;
+    white-space: pre-line;
 }
 
 .hero-meta {
@@ -84,6 +85,7 @@
 .hero-desc {
     color: $text-dim;
     line-height: 1.65;
+    white-space: pre-line;
 }
 
 .hero-actions {
