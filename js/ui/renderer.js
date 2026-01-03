@@ -27,7 +27,9 @@ function createMedia({ asset, code, title }) {
     }
 
     const img = document.createElement("img");
-    img.src = `../../assets/images/${asset}.jpg`;
+    
+    img.src = new URL(`../../assets/images/${asset}.jpg`, import.meta.url).href;
+
     img.alt = `${code} ${title}`;
     img.loading = "lazy";
     img.decoding = "async";
