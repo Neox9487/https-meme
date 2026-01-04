@@ -49,7 +49,7 @@ export const STATUSES = [
     {
         code: 200,
         name: "OK",
-        title: "任務成功地完成了......嗎?",
+        title: "任務成功地完成了......嗎 ?",
         category: "2xx",
         description:
             "HTTP 200 OK 表示請求已成功完成，且伺服器回傳的內容即為請求結果。" +
@@ -160,7 +160,7 @@ export const STATUSES = [
     {
         code: 300,
         name: "Multiple Choices",
-        title: "這很難做出選擇，對吧?",
+        title: "這很難做出選擇，對吧 ?",
         category: "3xx",
         description:
             "HTTP 300 Multiple Choices 表示請求的資源有多種可能的回應方式。" +
@@ -182,7 +182,7 @@ export const STATUSES = [
     {
         code: 302,
         name: "Found",
-        title: "沒有的話，我晚點再來?",
+        title: "沒有的話，我晚點再來 ?",
         category: "3xx",
         description:
             "HTTP 302 Found 表示請求的資源暫時位於不同的位置。" +
@@ -233,14 +233,14 @@ export const STATUSES = [
             "它的行為類似 301，但同樣要求用戶端保留原始的 HTTP 方法。" +
             "適合用於 API 或需要嚴格請求一致性的永久轉址場景。",
         asset: "308"
-    },
+    }, 
 
     /* 4xx Client Error */
-    { code: 400, name: "Bad Request", category: "4xx", description: "", asset: "" },
+    { code: 400, name: "Bad Request", title: "是不是想幹什麼壞事 ?", category: "4xx", description: "", asset: "400" },
     { code: 401, name: "Unauthorized", category: "4xx", description: "", asset: "" },
     { code: 402, name: "Payment Required", category: "4xx", description: "", asset: "" },
     { code: 403, name: "Forbidden", category: "4xx", description: "", asset: "" },
-    { code: 404, name: "Not Found", category: "4xx", description: "", asset: "" },
+    { code: 404, name: "Not Found", title: "這裡什麼事都沒有發生，對吧？", category: "4xx", description: "", asset: "404" },
     { code: 405, name: "Method Not Allowed", category: "4xx", description: "", asset: "" },
     { code: 406, name: "Not Acceptable", category: "4xx", description: "", asset: "" },
     { code: 407, name: "Proxy Authentication Required", category: "4xx", description: "", asset: "" },
