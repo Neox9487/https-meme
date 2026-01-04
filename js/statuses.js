@@ -6,7 +6,7 @@ export const STATUSES = [
         title: "請繼續，目前一切正常，伺服器正在等你把話說完",
         category: "1xx",
         description:
-            "HTTP 100 Continue 是一個資訊性狀態碼，表示「到目前為止一切正常」。" +
+            "HTTP 100 Continue 是一個資訊性狀態碼，表示『到目前為止一切正常』。" +
             "伺服器已成功接收到請求標頭，並且願意接收接下來的請求主體 ( body ) 。" +
             "此狀態碼通常會搭配 `Expect: 100-continue` 標頭使用，讓用戶端在送出大量資料前，先確認伺服器是否願意接受，藉此避免不必要的資料傳輸。",
         asset: "100"
@@ -29,7 +29,7 @@ export const STATUSES = [
         category: "1xx",
         description:
             "HTTP 102 Processing 表示伺服器已成功接收到請求，但尚未完成處理。" +
-            "此狀態碼的目的是告知用戶端「我還活著，而且正在忙」，避免用戶端因等待過久而誤判為請求逾時。" +
+            "此狀態碼的目的是告知用戶端『我還活著，而且正在忙』，避免用戶端因等待過久而誤判為請求逾時。" +
             "常見於需要長時間處理的操作，例如大型檔案處理、複雜計算或批次作業。",
         asset: "102"
     },
@@ -39,7 +39,7 @@ export const STATUSES = [
         title: "先給你一點提示，完整內容等等就來",
         category: "1xx",
         description:
-            "HTTP 103 Early Hints 用於在最終回應尚未完成前，提前向用戶端提供一些「提示資訊」。" +
+            "HTTP 103 Early Hints 用於在最終回應尚未完成前，提前向用戶端提供一些『提示資訊』。" +
             "這些提示通常包含瀏覽器即將需要的資源，例如樣式表或 JavaScript 檔案 ( 透過 `Link` 標頭 ) 。" +
             "透過提早載入關鍵資源，可以有效減少頁面實際顯示時的等待時間，提升整體效能與使用者體驗。",
         asset: "103"
@@ -126,7 +126,7 @@ export const STATUSES = [
     {
         code: 207,
         name: "Multi-Status",
-        title: "這不是八個，是「很多」的單位",
+        title: "這不是八個，是『很多』的單位",
         category: "2xx",
         description:
             "HTTP 207 Multi-Status 是 WebDAV 專用狀態碼，用於回傳多個資源的處理結果。" +
